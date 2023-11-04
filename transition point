@@ -1,0 +1,12 @@
+-->inputs are an array and its size , transition point is a point where the value becomes 1.
+In this problem we need to find the index where 1 occurs in an array
+if there is no 1 we can return -1.
+
+
+def transitionPoint(self, arr, n): 
+        # Code here
+        if 1 in arr:
+            res=arr.index(1)
+        else:
+            res=-1
+        return res
