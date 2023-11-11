@@ -1,0 +1,65 @@
+Given two strings 'str1' and 'str2', check if these two strings are isomorphic to each other.
+
+If the characters in str1 can be changed to get str2, then two strings, str1 and str2, are isomorphic. A character must be completely swapped out for another character while maintaining the order of the characters. A character may map to itself, but no two characters may map to the same character.
+
+Example 1:
+
+Input:
+str1 = aab
+str2 = xxy
+Output: 
+1
+Explanation: 
+There are two different characters in aab and xxy, i.e a and b with frequency 2 and 1 respectively.
+Example 2:
+
+Input:
+str1 = aab
+str2 = xyz
+Output: 
+0
+Explanation: 
+There are two different characters in aab but there are three different charactersin xyz. So there won't be one to one mapping between str1 and str2.
+Your Task:
+You don't need to read input or print anything.Your task is to complete the function areIsomorphic() which takes the string str1 and string str2 as input parameter and  check if two strings are isomorphic. The function returns true if strings are isomorphic else it returns false.
+
+Expected Time Complexity: O(|str1|+|str2|).
+Expected Auxiliary Space: O(Number of different characters).
+Note: |s| represents the length of string s.
+Here's a Python implementation of the function areIsomorphic():
+
+def areIsomorphic(str1, str2):
+    if len(str1) != len(str2):
+        return False
+
+    mapping_str1_to_str2 = {}
+    mapping_str2_to_str1 = {}
+
+    for char1, char2 in zip(str1, str2):
+        if char1 in mapping_str1_to_str2:
+            if mapping_str1_to_str2[char1] != char2:
+                return False
+        else:
+            mapping_str1_to_str2[char1] = char2
+
+        if char2 in mapping_str2_to_str1:
+            if mapping_str2_to_str1[char2] != char1:
+                return False
+        else:
+            mapping_str2_to_str1[char2] = char1
+
+    return True
+
+# Example usage:
+str1_1, str2_1 = "aab", "xxy"
+str1_2, str2_2 = "aab", "xyz"
+
+print(areIsomorphic(str1_1, str2_1))  # Output: True
+print(areIsomorphic(str1_2, str2_2))  # Output: False
+This function uses two dictionaries to store the mappings from characters in str1 to characters in str2 and vice versa.
+It iterates through the characters of both strings, checking and updating the mappings. 
+If at any point the mapping is inconsistent, the function returns False. If the loop completes without issues, the function returns True.
+
+
+
+
