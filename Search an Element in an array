@@ -1,0 +1,10 @@
+Given an integer array and another integer element.
+The task is to find if the given element is present in array or not.
+CODE:
+def search(self,arr, N, X):
+        #Your code here
+        for i in arr:
+            if i==X:
+                res=arr.index(i)
+                return res
+        return "-1"
