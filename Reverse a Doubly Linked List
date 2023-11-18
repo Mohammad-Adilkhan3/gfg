@@ -1,0 +1,48 @@
+Given a doubly linked list of n elements. Your task is to reverse the doubly linked list in-place.
+CODE:
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+def reverseDLL(head):
+    if not head:
+        return None
+    
+    current = head
+    new_head = None
+    
+    while current:
+        # Swap next and prev pointers for the current node
+        current.next, current.prev = current.prev, current.next
+        # Move to the next node
+        new_head = current
+        current = current.prev
+
+    # The new head is the last node we processed
+    return new_head
+
+# Helper function to print the doubly linked list
+def printDLL(head):
+    current = head
+    while current:
+        print(current.data, end=" ")
+        current = current.next
+    print()
+
+# Example usage:
+# Constructing the doubly linked list
+head = Node(3)
+node1 = Node(4)
+node2 = Node(5)
+head.next = node1
+node1.prev = head
+node1.next = node2
+node2.prev = node1
+
+# Reversing the doubly linked list
+new_head = reverseDLL(head)
+
+# Printing the corrected reversed doubly linked list
+printDLL(new_head)
