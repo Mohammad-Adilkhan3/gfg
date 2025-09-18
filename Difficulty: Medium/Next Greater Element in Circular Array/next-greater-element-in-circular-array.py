@@ -1,5 +1,5 @@
 class Solution:
-    def nextLargerElement(self, arr):
+    def nextGreater(self, arr):
         # code here
         st=[]
         n=len(arr)
