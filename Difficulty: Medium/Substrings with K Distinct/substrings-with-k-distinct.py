@@ -21,11 +21,8 @@ class Solution:
                 del dct[s[i]]
             
         return cnt
-            
-                
-                    
         
-    def countSubstr (self,s, k):
+    def countSubstr (self, s, k):
+        # Code here
         l=len(s)
         return self.substrk(s,l,k)-self.substrk(s,l,k+1)
-
