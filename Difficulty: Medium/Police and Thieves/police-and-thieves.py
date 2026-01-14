@@ -1,7 +1,6 @@
 class Solution:
-    
     def catchThieves(self, arr, k):
-        #code  here
+        #code here
         from collections import deque
         police = deque([i for i,person in enumerate(arr) if person=='P'])
         theives = deque([i for i,person in enumerate(arr) if person=='T'])
@@ -16,4 +15,5 @@ class Solution:
             else:
                 police.popleft()
         return count
+        
 
