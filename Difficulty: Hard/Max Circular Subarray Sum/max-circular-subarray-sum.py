@@ -23,4 +23,3 @@ class Solution:
 
 
         return max(mx, maxi)
-        
