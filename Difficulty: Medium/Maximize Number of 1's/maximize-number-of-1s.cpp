@@ -1,6 +1,5 @@
 class Solution {
   public:
-    // k is the maximum number of zeros allowed to flip
     int maxOnes(vector<int>& arr, int k) {
         // code here
         int res = 0;
@@ -20,4 +19,3 @@ class Solution {
     return res; 
     }
 };
-
