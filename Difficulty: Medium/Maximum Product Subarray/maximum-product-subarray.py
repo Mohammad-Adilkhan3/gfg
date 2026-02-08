@@ -1,8 +1,4 @@
-#User function Template for python3
 class Solution:
-
-	# Function to find maximum
-	# product subarray
 	def maxProduct(self,arr):
 		# code here
 		n = len(arr)
@@ -16,19 +12,3 @@ class Solution:
             min_prod = min(arr[i], min_prod * arr[i])
             max_so_far = max(max_so_far, max_prod)
         return max_so_far
-
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-if __name__ == '__main__':
-    tc = int(input())
-    while tc > 0:
-        arr = list(map(int, input().strip().split()))
-        ob = Solution()
-        ans = ob.maxProduct(arr)
-        print(ans)
-        tc -= 1
-
-# } Driver Code Ends
