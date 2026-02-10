@@ -1,7 +1,5 @@
-#User function Template for python3
-
 class Solution:
-    def kokoEat(self,arr,k):
+    def kokoEat(self, arr, k):
         # Code here
         l, r = 1, max(arr)
         ans =r
@@ -19,4 +17,3 @@ class Solution:
             else:
                 l = mid+1
         return ans 
-
