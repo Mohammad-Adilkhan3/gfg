@@ -1,22 +1,14 @@
-#User function Template for python3
 class Solution:
-    # Function to find hIndex
     def hIndex(self, citations):
         #code here
+        citations.sort()
         n = len(citations)
-        count = [0] * (n + 1)
-        # Count the citations
-        for c in citations:
-            if c >= n:
-                count[n] += 1
-            else:
-                count[c] += 1
-        # Find the H-index
-        h = 0
-        for i in range(n, -1, -1):
-            h += count[i]
-            if h >= i:
-                return i
-        return 0
-
+        max_val = 0
+        for i in range(n):
+            curr_diff = n-i
+            curr_val = citations[i]
+            if curr_val >= curr_diff:
+                max_val=curr_diff
+                return max_val
+        return max_val
 
