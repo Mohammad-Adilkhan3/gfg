@@ -1,6 +1,6 @@
 class Solution:
-    def longestCommonSum(self, a1, a2):
-        #Code here.
+    def equalSumSpan(self, a1, a2):
+        # code here
         n = len(a1)
         diff_map = {}
         max_len = 0
@@ -18,5 +18,3 @@ class Solution:
                 diff_map[curr_sum] = i
     
         return max_len
-            
-            
